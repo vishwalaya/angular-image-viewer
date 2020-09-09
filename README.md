@@ -1,10 +1,12 @@
 
 # Angular X Image Viewer
 
-A configurable Angular image viewer component, compatible with Angular 7.x+ 
+demo: https://kdimatteo.github.io/angular-image-viewer/
+
+A configurable Angular image viewer component, compatible with Angular 8 
 
 ## Features:
- * Compatible with Angular 7.x+
+ * Compatible with Angular 8
  * Configurable
  * Rotate image
  * Zoom image
