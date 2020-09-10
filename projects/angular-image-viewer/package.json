@@ -1,11 +1,11 @@
 {
-  "name": "angular-x-image-viewer",
-  "version": "1.1.1",
+  "name": "@clarivate/angular-image-viewer",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/deepakgonda/angular-image-viewer.git"
+    "url": "https://github.com/clarivate/angular-image-viewer.git"
   },
-  "author": "Deepak Pandey <deepakpandeygonda@gmail.com>",
+  "author": "",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^9.0.0",
