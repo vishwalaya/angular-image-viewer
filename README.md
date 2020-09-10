@@ -1,7 +1,7 @@
 
-# Angular X Image Viewer
+# Angular Image Viewer
 
-demo: https://kdimatteo.github.io/angular-image-viewer/
+demo: https://clarivate.github.io/angular-image-viewer/
 
 A configurable Angular image viewer component, compatible with Angular 8 
 
@@ -19,7 +19,7 @@ A configurable Angular image viewer component, compatible with Angular 8
 To use default configuration, simply import the ImageViewerModule into your module, like so:
 
 ```javascript
-import { AngularImageViewerModule } from "angular-x-image-viewer";
+import { AngularImageViewerModule } from "@clarivate/angular-image-viewer";
 
 @NgModule({
   //...
@@ -34,10 +34,20 @@ import { AngularImageViewerModule } from "angular-x-image-viewer";
 Then, add the component to your template, providing an array of image URLs. You can also optionally add an index, to indicate which image should be shown first. The default will be the first item in the array.
 
 ```html
-<angular-image-viewer  [src]="images" [(index)]="imageIndex"></angular-image-viewer>
+<div class="container">
+  <angular-image-viewer  [src]="images" [(index)]="imageIndex"></angular-image-viewer>
+</div>
 ```
 
-By default, the image viewer will fill its container. If you wish to restrict the size, simply place it within a div, and set the size constraints on the div.
+By default, the image viewer will fill its container. If you wish to restrict the size, simply place it within a div, and set the size constraints on the div:
+
+```css
+.container {
+  position: relative;
+  height: 600px;
+  width: 600px;
+}
+```
 
 ---
 
