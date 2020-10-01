@@ -1,11 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularImageViewerComponent } from './angular-image-viewer.component';
 import { FullScreenDirective } from './directives/full-screen.directive';
-// import { ImageViewerConfig } from 'dist/angular-image-viewer/public-api';
 
 
 
@@ -13,7 +11,6 @@ import { FullScreenDirective } from './directives/full-screen.directive';
   declarations: [AngularImageViewerComponent, FullScreenDirective],
   imports: [
     CommonModule,
-    BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
   ],
