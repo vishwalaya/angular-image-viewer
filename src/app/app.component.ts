@@ -21,6 +21,7 @@ export class AppComponent {
   config: ImageViewerConfig = {
     wheelZoom: true,
     allowKeyboardNavigation: true,
+    primaryColor: '#008474',
     btnShow: {
       rotateClockwise: true,
       rotateCounterClockwise: true,
@@ -28,12 +29,12 @@ export class AppComponent {
       zoomOut: true
     },
     btnIcons: {
-      rotateClockwise: 'fa fa-refresh',
-      rotateCounterClockwise: 'fa fa-undo',
       zoomIn: 'fa fa-plus',
       zoomOut: 'fa fa-minus',
-      next: 'fa fa-arrow-right',
-      prev: 'fa fa-arrow-left',
+      rotateClockwise: 'fa fa-refresh',
+      rotateCounterClockwise: 'fa fa-undo',
+      next: 'fa fa-chevron-right',
+      prev: 'fa fa-chevron-left',
       fullscreen: 'fa fa-arrows-alt',
     },
     btnClass: 'default',
