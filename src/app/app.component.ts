@@ -16,17 +16,36 @@ export class AppComponent {
     'http://www.fillmurray.com/510/500',
 
   ];
-
-  imageIndexOne = 0;
-
-  config: ImageViewerConfig = { customBtns: [{ name: 'print', icon: 'fa fa-print' }, { name: 'link', icon: 'fa fa-link' }] };
+  imageIndex = 0;
+  imageName: string;
+  config: ImageViewerConfig = {
+    wheelZoom: true,
+    allowKeyboardNavigation: true,
+    primaryColor: '#008474',
+    btnShow: {
+      rotateClockwise: true,
+      rotateCounterClockwise: true,
+      zoomIn: true,
+      zoomOut: true
+    },
+    btnIcons: {
+      zoomIn: 'fa fa-plus',
+      zoomOut: 'fa fa-minus',
+      rotateClockwise: 'fa fa-refresh',
+      rotateCounterClockwise: 'fa fa-undo',
+      next: 'fa fa-chevron-right',
+      prev: 'fa fa-chevron-left',
+      fullscreen: 'fa fa-arrows-alt',
+    },
+    btnClass: 'default',
+    customBtns: [{ name: 'print', icon: 'fa fa-print' }, { name: 'link', icon: 'fa fa-link' }]
+  };
 
   handleEvent(event: CustomImageEvent) {
-    console.log(`${event.name} has been click on img ${event.imageIndex + 1}`);
-
+    // console.log(`${event.name} has been click on img ${event.imageIndex + 1}`);
     switch (event.name) {
       case 'print':
-        console.log('run print logic');
+        // console.log('run print logic');
         break;
     }
   }

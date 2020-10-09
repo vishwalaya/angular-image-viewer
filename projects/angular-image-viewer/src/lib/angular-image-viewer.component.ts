@@ -3,11 +3,11 @@ import { ImageViewerConfig } from './models/image-viewer-config.model';
 import { CustomImageEvent } from './models/custom-image-event-model';
 import { DomSanitizer } from '@angular/platform-browser';
 
-
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
   zoomFactor: 0.1,
-  containerBackgroundColor: '#ccc',
+  containerBackgroundColor: '#e4dede',
+  primaryColor: '',
   wheelZoom: false,
   allowFullscreen: true,
   allowKeyboardNavigation: true,
@@ -22,14 +22,13 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   btnIcons: {
     zoomIn: 'fa fa-plus',
     zoomOut: 'fa fa-minus',
-    rotateClockwise: 'fa fa-repeat',
+    rotateClockwise: 'fa fa-refresh',
     rotateCounterClockwise: 'fa fa-undo',
-    next: 'fa fa-arrow-right',
-    prev: 'fa fa-arrow-left',
+    next: 'fa fa-chevron-right',
+    prev: 'fa fa-chevron-left',
     fullscreen: 'fa fa-arrows-alt',
   }
 };
-
 
 @Component({
   selector: 'angular-image-viewer',
@@ -46,6 +45,9 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
 
   @Input()
   index = 0;
+
+  @Input()
+  imageName: string;
 
   @Input()
   config: ImageViewerConfig;
@@ -73,7 +75,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   private hovered = false;
 
   constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig,
-              private sanitizer: DomSanitizer) { }
+    private sanitizer: DomSanitizer) { }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.screenHeightOccupied) {

@@ -2,6 +2,7 @@ export interface ImageViewerConfig {
     btnClass?: string;
     zoomFactor?: number;
     containerBackgroundColor?: string;
+    primaryColor?: string;
     wheelZoom?: boolean;
     allowFullscreen?: boolean;
     allowKeyboardNavigation?: boolean;
