@@ -48,6 +48,9 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   index = 0;
 
   @Input()
+  imageName: string;
+
+  @Input()
   config: ImageViewerConfig;
 
   @Output()
