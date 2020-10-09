@@ -42,9 +42,7 @@ export class AppComponent {
   };
 
   handleEvent(event: CustomImageEvent) {
-
     // console.log(`${event.name} has been click on img ${event.imageIndex + 1}`);
-
     switch (event.name) {
       case 'print':
         // console.log('run print logic');

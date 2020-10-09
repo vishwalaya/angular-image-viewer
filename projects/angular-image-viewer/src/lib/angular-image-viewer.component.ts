@@ -3,7 +3,6 @@ import { ImageViewerConfig } from './models/image-viewer-config.model';
 import { CustomImageEvent } from './models/custom-image-event-model';
 import { DomSanitizer } from '@angular/platform-browser';
 
-
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
   zoomFactor: 0.1,
@@ -31,7 +30,6 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   }
 };
 
-
 @Component({
   selector: 'angular-image-viewer',
   templateUrl: './angular-image-viewer.component.html',
@@ -43,7 +41,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   src: string[];
 
   @Input()
-  screenHeightOccupied: 0;
+  screenHeightOccupied: 0;             // In Px
 
   @Input()
   index = 0;
