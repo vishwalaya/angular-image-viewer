@@ -1,8 +1,9 @@
 <div [appScreenfull]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor"
     (wheel)="scrollZoom($event)" (dragover)="onDragOver($event)">
     <div class="image-name" *ngIf="imageName"> <span>{{imageName}}</span></div>
-    <img [src]="src[index]" [ngStyle]="style" alt="Image not found..." (dragstart)="onDragStart($event)"
-        (load)="onLoad(src[index])" (error)="imageNotFound(src[index])" (loadstart)="onLoadStart(src[index])" />
+    <img [src]="src[index]" [ngStyle]="style" alt="Image not found..." [style.cursor]="cursorForDrag"
+        (load)="onLoad(src[index])" (loadstart)="onLoadStart(src[index])" (dragstart)="onDragStart($event)"
+        (dragleave)="onDragLeave()" (error)="imageNotFound(src[index])" />
 
     <div class="spinner-container" *ngIf="loading">
         <div class="spinner"></div>
