@@ -21,6 +21,10 @@
     }
   }
 
+  .dragging {
+    cursor: grabbing;
+  }
+
 }
 
 #ngx-fs-btn {

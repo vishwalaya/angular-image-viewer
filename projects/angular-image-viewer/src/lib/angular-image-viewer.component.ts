@@ -66,7 +66,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   public style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
   public fullscreen = false;
   public loading = true;
-  public cursorForDrag = 'grab';
+  public isDragOn = false;
   private scale = 1;
   private rotation = 0;
   private translateX = 0;
@@ -160,7 +160,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   onDragStart(evt) {
-    this.cursorForDrag = 'grabbing';
+    this.isDragOn = true;
     if (evt.dataTransfer && evt.dataTransfer.setDragImage) {
       evt.dataTransfer.setDragImage(evt.target.nextElementSibling, 0, 0);
     }
@@ -169,7 +169,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   onDragLeave() {
-    this.cursorForDrag = 'grab';
+    this.isDragOn = false;
   }
 
   toggleFullscreen() {
