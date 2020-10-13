@@ -81,7 +81,6 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes.screenHeightOccupied) {
       this.styleHeight = 'calc(98vh - ' + this.screenHeightOccupied + 'px)';
-      // console.log('Style Height:', this.styleHeight);
     }
   }
 
@@ -151,25 +150,20 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   imageNotFound(url) {
   }
 
-  onDragOver(evt) {
-    this.translateX += (evt.clientX - this.prevX);
-    this.translateY += (evt.clientY - this.prevY);
-    this.prevX = evt.clientX;
-    this.prevY = evt.clientY;
+  onDragEnd(evt) {
+    this.translateX += evt.distance.x;
+    this.translateY += evt.distance.y;
     this.updateStyle();
   }
 
   onDragStart(evt) {
-    this.isDragOn = true;
-    if (evt.dataTransfer && evt.dataTransfer.setDragImage) {
-      evt.dataTransfer.setDragImage(evt.target.nextElementSibling, 0, 0);
+    if(evt.source._dragRef._initialTransform && evt.source._dragRef._initialTransform.length > 0){
+      const myTranslate = evt.source._dragRef._initialTransform.split(' rotate')[0];
+      const myRotate = this.style.transform.split(' rotate')[1];
+      evt.source._dragRef._initialTransform =  `${myTranslate} rotate${myRotate}`;
+    } else {
+      evt.source._dragRef._initialTransform = this.style.transform;
     }
-    this.prevX = evt.clientX;
-    this.prevY = evt.clientY;
-  }
-
-  onDragLeave() {
-    this.isDragOn = false;
   }
 
   toggleFullscreen() {
