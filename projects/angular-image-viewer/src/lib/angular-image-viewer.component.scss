@@ -18,8 +18,11 @@
       cursor: pointer;
     }
   }
+  
+  .dragging {
+    cursor: grabbing;
+  }
 }
-
 
 #ngx-fs-btn {
   top: 15px;

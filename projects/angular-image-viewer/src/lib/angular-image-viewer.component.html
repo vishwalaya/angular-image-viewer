@@ -5,7 +5,7 @@
     </div>
 
 
-    <img cdkDrag [src]="src[index]" [ngStyle]="style" alt="Image not found..."
+    <img cdkDrag [src]="src[index]" [ngStyle]="style" alt="Image not found..." [ngClass]="{'dragging': isDragOn }"
         (cdkDragStarted)="onDragStart($event)"
         (cdkDragEnded)="onDragEnd($event)"
         (load)="onLoad(src[index])" (loadstart)="onLoadStart(src[index])" (error)="imageNotFound(src[index])" />
