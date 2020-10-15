@@ -79,6 +79,8 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes.screenHeightOccupied) {
       this.styleHeight = 'calc(98vh - ' + this.screenHeightOccupied + 'px)';
+    } else if (changes.index) {
+      this.reset();
     }
   }
 
