@@ -1,8 +1,14 @@
 <div [appScreenfull]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor"
-    (wheel)="scrollZoom($event)" (dragover)="onDragOver($event)">
-    <div class="image-name" *ngIf="imageName"> <span>{{imageName}}</span></div>
-    <img [src]="src[index]" [ngStyle]="style" alt="Image not found..." (dragstart)="onDragStart($event)"
-        (load)="onLoad(src[index])" (error)="imageNotFound(src[index])" (loadstart)="onLoadStart(src[index])" />
+    (wheel)="scrollZoom($event)">
+    <div class="image-name" *ngIf="imageName">
+      <span>{{ imageName }}</span>
+    </div>
+
+
+    <img cdkDrag [src]="src[index]" [ngStyle]="style" alt="Image not found..." [ngClass]="{'dragging': isDragOn }"
+        (cdkDragStarted)="onDragStart($event)"
+        (cdkDragEnded)="onDragEnd($event)"
+        (load)="onLoad(src[index])" (loadstart)="onLoadStart(src[index])" (error)="imageNotFound(src[index])" />
 
     <div class="spinner-container" *ngIf="loading">
         <div class="spinner"></div>
@@ -30,11 +36,11 @@
             </button>
 
             <div class="button-zoom-in-out-container">
-                <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.zoomIn" 
+                <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.zoomIn"
                 [style.color]="config.primaryColor" (click)="zoomIn()">
                     <span [class]="config.btnIcons.zoomIn"></span>
                 </button>
-                <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.zoomOut" 
+                <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.zoomOut"
                 [style.color]="config.primaryColor" (click)="zoomOut()">
                     <span [class]="config.btnIcons.zoomOut"></span>
                 </button>
@@ -52,7 +58,7 @@
             <span [class]="config.btnIcons.next"></span>
         </button>
     </div>
-    <div class="footer-section"> 
+    <div class="footer-section">
         <div class="image-txt-count-left-align"><span>Image {{index + 1}} of {{src.length}}</span></div>
         <div class="footer-txt-right-align">
             <span class="footer-txt-right-align-title" [style.color]="config.primaryColor" >View previous or next image</span>
