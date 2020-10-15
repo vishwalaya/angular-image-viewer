@@ -19,10 +19,10 @@
       "dom"
     ],
     "paths": {
-      "angular-image-viewer": [
+      "@clarivate/angular-image-viewer": [
         "dist/angular-image-viewer"
       ],
-      "angular-image-viewer/*": [
+      "@clarivate/angular-image-viewer/*": [
         "dist/angular-image-viewer/*"
       ]
     }

@@ -4,12 +4,12 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  & img {
-    max-width: 90%;
-    max-height: 95%;
-    margin-left: 10px;
+
+  .drag-container {
     cursor: grab;
-    z-index: 100;
+    &:active {
+      cursor:grabbing;
+    }
   }
 
   & button {
@@ -19,7 +19,7 @@
       cursor: pointer;
     }
   }
-  
+
   .dragging {
     cursor: grabbing;
   }
