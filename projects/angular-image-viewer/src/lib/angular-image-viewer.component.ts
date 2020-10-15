@@ -150,13 +150,6 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   imageNotFound(url) {
   }
 
-  onDragEnd(evt) {
-    this.isDragOn = false;
-    this.translateX += evt.distance.x;
-    this.translateY += evt.distance.y;
-    this.updateStyle();
-  }
-
   onDragStart(evt) {
     this.isDragOn = true;
     if (evt.source._dragRef._initialTransform && evt.source._dragRef._initialTransform.length > 0) {
@@ -210,10 +203,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   private updateStyle() {
-    this.style.transform = `translate(${this.translateX}px, ${this.translateY}px) rotate(${this.rotation}deg) scale(${this.scale})`;
-    this.style.msTransform = this.style.transform;
-    this.style.webkitTransform = this.style.transform;
-    this.style.oTransform = this.style.transform;
+    this.style.transform = `rotate(${this.rotation}deg) scale(${this.scale})`;
   }
 
   private mergeConfig(defaultValues: ImageViewerConfig, overrideValues: ImageViewerConfig): ImageViewerConfig {
