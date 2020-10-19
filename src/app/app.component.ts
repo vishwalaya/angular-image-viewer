@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'angular-image-viewer';
   images = [
     'http://www.fillmurray.com/400/400',
-    'http://www.fillmurray.com/400/450',
+    'http://www.fillmurray.com/600/550',
     'http://www.fillmurray.com/450/400',
     'http://www.fillmurray.com/510/500',
 

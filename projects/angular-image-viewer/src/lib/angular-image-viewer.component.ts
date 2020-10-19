@@ -1,7 +1,8 @@
-import { Component, OnInit, HostListener, Optional, Inject, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, HostListener, Optional, Inject, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { ImageViewerConfig } from './models/image-viewer-config.model';
 import { CustomImageEvent } from './models/custom-image-event-model';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
@@ -37,6 +38,8 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
 })
 export class AngularImageViewerComponent implements OnInit, OnChanges {
 
+  @ViewChild(CdkDrag) cdkDrag: CdkDrag;
+
   @Input()
   src: string[];
 
@@ -69,8 +72,6 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   public isDragOn = false;
   private scale = 1;
   private rotation = 0;
-  private translateX = 0;
-  private translateY = 0;
   private hovered = false;
 
   constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig,
@@ -150,15 +151,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   imageNotFound(url) {
   }
 
-  onDragEnd(evt) {
-    this.isDragOn = false;
-    this.translateX += evt.distance.x;
-    this.translateY += evt.distance.y;
-    this.updateStyle();
-  }
-
   onDragStart(evt) {
-    this.isDragOn = true;
     if (evt.source._dragRef._initialTransform && evt.source._dragRef._initialTransform.length > 0) {
       const myTranslate = evt.source._dragRef._initialTransform.split(' rotate')[0];
       const myRotate = this.style.transform.split(' rotate')[1];
@@ -190,9 +183,8 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   reset() {
     this.scale = 1;
     this.rotation = 0;
-    this.translateX = 0;
-    this.translateY = 0;
     this.updateStyle();
+    this.cdkDrag.reset();
   }
 
   @HostListener('mouseover')
@@ -210,10 +202,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   private updateStyle() {
-    this.style.transform = `translate(${this.translateX}px, ${this.translateY}px) rotate(${this.rotation}deg) scale(${this.scale})`;
-    this.style.msTransform = this.style.transform;
-    this.style.webkitTransform = this.style.transform;
-    this.style.oTransform = this.style.transform;
+    this.style.transform = `rotate(${this.rotation}deg) scale(${this.scale})`;
   }
 
   private mergeConfig(defaultValues: ImageViewerConfig, overrideValues: ImageViewerConfig): ImageViewerConfig {
