@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener, Optional, Inject, Input, Output, Event
 import { ImageViewerConfig } from './models/image-viewer-config.model';
 import { CustomImageEvent } from './models/custom-image-event-model';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
@@ -37,7 +38,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
 })
 export class AngularImageViewerComponent implements OnInit, OnChanges {
 
-  @ViewChild('dragContainer') dragContainer:ElementRef;
+  @ViewChild(CdkDrag) cdkDrag: CdkDrag;
 
   @Input()
   src: string[];
@@ -183,8 +184,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
     this.scale = 1;
     this.rotation = 0;
     this.updateStyle();
-    this.dragContainer.nativeElement.style.transform = '';
-    // this.style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
+    this.cdkDrag.reset();
   }
 
   @HostListener('mouseover')
