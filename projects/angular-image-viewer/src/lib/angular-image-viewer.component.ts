@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Optional, Inject, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, HostListener, Optional, Inject, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { ImageViewerConfig } from './models/image-viewer-config.model';
 import { CustomImageEvent } from './models/custom-image-event-model';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -36,6 +36,8 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   styleUrls: ['./angular-image-viewer.component.scss']
 })
 export class AngularImageViewerComponent implements OnInit, OnChanges {
+
+  @ViewChild('dragContainer') dragContainer:ElementRef;
 
   @Input()
   src: string[];
@@ -181,6 +183,8 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
     this.scale = 1;
     this.rotation = 0;
     this.updateStyle();
+    this.dragContainer.nativeElement.style.transform = '';
+    // this.style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
   }
 
   @HostListener('mouseover')

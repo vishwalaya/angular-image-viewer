@@ -6,7 +6,6 @@
   overflow: hidden;
 
   .drag-container {
-    z-index: 100;
     cursor: grab;
     &:active {
       cursor:grabbing;
