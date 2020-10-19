@@ -180,8 +180,6 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   reset() {
     this.scale = 1;
     this.rotation = 0;
-    this.translateX = 0;
-    this.translateY = 0;
     this.updateStyle();
   }
 
