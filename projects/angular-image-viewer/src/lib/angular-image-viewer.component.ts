@@ -69,8 +69,6 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   public isDragOn = false;
   private scale = 1;
   private rotation = 0;
-  private translateX = 0;
-  private translateY = 0;
   private hovered = false;
 
   constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig,
@@ -151,7 +149,6 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   onDragStart(evt) {
-    this.isDragOn = true;
     if (evt.source._dragRef._initialTransform && evt.source._dragRef._initialTransform.length > 0) {
       const myTranslate = evt.source._dragRef._initialTransform.split(' rotate')[0];
       const myRotate = this.style.transform.split(' rotate')[1];
