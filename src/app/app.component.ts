@@ -18,6 +18,12 @@ export class AppComponent {
   ];
   imageIndex = 0;
   imageName: string;
+  footerTexts = [
+    'Image',
+    'of',
+    'View previous or next image',
+    'using < > on the keyboard'
+  ];
   config: ImageViewerConfig = {
     wheelZoom: true,
     allowKeyboardNavigation: true,

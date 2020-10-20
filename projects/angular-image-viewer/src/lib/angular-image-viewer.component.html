@@ -1,13 +1,13 @@
 <div [appScreenfull]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor"
     (wheel)="scrollZoom($event)">
     <div class="image-name" *ngIf="imageName">
-      <span>{{ imageName }}</span>
+      <span>{{imageName}}</span>
     </div>
 
     <div cdkDrag class="drag-element">
         <img [src]="src[index]" [ngStyle]="style" alt=""
             (cdkDragStarted)="onDragStart($event)"
-            (load)="onLoad(src[index])" (loadstart)="onLoadStart(src[index])" (error)="imageNotFound(src[index])" />
+            (load)="onLoad()" (loadstart)="onLoadStart()" (error)="imageNotFound()" />
     </div>
 
     <div class="spinner-container" *ngIf="loading">
@@ -59,10 +59,10 @@
         </button>
     </div>
     <div class="footer-section">
-        <div class="image-txt-count-left-align"><span>Image {{index + 1}} of {{src.length}}</span></div>
+        <div class="image-txt-count-left-align"><span>{{footerTexts[0]}} {{index + 1}} {{footerTexts[1]}} {{src.length}}</span></div>
         <div class="footer-txt-right-align">
-            <span class="footer-txt-right-align-title" [style.color]="config.primaryColor" >View previous or next image</span>
-            <span class="footer-txt-right-align-note">using < > on the keyboard</span>
+            <span class="footer-txt-right-align-title" [style.color]="config.primaryColor">{{footerTexts[2]}}</span>
+            <span class="footer-txt-right-align-note">{{footerTexts[3]}}</span>
         </div>
     </div>
 </div>
