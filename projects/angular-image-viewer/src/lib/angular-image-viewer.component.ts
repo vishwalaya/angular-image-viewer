@@ -44,6 +44,9 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   src: string[];
 
   @Input()
+  config: ImageViewerConfig;
+
+  @Input()
   screenHeightOccupied: 0;             // In Px
 
   @Input()
@@ -53,7 +56,12 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   imageName: string;
 
   @Input()
-  config: ImageViewerConfig;
+  footerTexts = [
+    'Image',
+    'of',
+    'View previous or next image',
+    'using < > on the keyboard'
+  ];
 
   @Output()
   indexChange: EventEmitter<number> = new EventEmitter();
@@ -74,8 +82,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   private rotation = 0;
   private hovered = false;
 
-  constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig,
-    private sanitizer: DomSanitizer) { }
+  constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig) { }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.screenHeightOccupied) {
@@ -140,15 +147,15 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
     this.updateStyle();
   }
 
-  onLoad(url) {
+  onLoad() {
     this.loading = false;
   }
 
-  onLoadStart(url) {
+  onLoadStart() {
     this.loading = true;
   }
 
-  imageNotFound(url) {
+  imageNotFound() {
   }
 
   onDragStart(evt) {
