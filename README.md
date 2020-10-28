@@ -61,7 +61,8 @@ The configuration object is structured as below. All values are optional, and if
 {
   btnClass: 'default', // The CSS class(es) that will apply to the buttons
   zoomFactor: 0.1, // The amount that the scale will be increased by
-  containerBackgroundColor: '#ccc', // The color to use for the background. This can provided in hex, or rgb(a).
+  containerBackgroundColor: '#e4dede', // The color to use for the background. This can provided in hex, or rgb(a).
+  primaryColor: '', // Color to use for all buttons image.
   wheelZoom: true, // If true, the mouse wheel can be used to zoom in
   allowFullscreen: true, // If true, the fullscreen button will be shown, allowing the user to enter fullscreen mode
   allowKeyboardNavigation: true, // If true, the left / right arrow keys can be used for navigation
@@ -105,6 +106,13 @@ handleEvent(event: customImageEvent) {
     }
 }
 ```
+
+## Local setup for this branch:
+
+* Add respective version of this component. yarn add @clarivate/angular-image-viewer.
+* yarn serve-lib is to compile your changes in projects\angular-image-viewer and it will update in dist folder. But to reflect in UI, update projects\angular-image-viewer\ng-package.json file dest to node_module location. "dest": "../../node_modules/@clarivate/angular-image-viewer",
+* yarn start to get the application up.
+
 
 Note: This package is built using the idea from ngx-image-viewer(https://github.com/jpilfold/ngx-image-viewer). It has advantage that it uses latest dependencies which fixes Issue #23 & #29  i.e related to FullScreen Image. 
 
