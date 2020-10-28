@@ -38,7 +38,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
 })
 export class AngularImageViewerComponent implements OnInit, OnChanges {
 
-  @ViewChild(CdkDrag) cdkDrag: CdkDrag;
+  @ViewChild(CdkDrag, null) cdkDrag: CdkDrag;
 
   @Input()
   src: string[];
