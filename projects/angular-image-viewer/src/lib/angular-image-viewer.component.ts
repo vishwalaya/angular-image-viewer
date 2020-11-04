@@ -1,8 +1,8 @@
-import { Component, OnInit, HostListener, Optional, Inject, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
-import { ImageViewerConfig } from './models/image-viewer-config.model';
-import { CustomImageEvent } from './models/custom-image-event-model';
-import { DomSanitizer } from '@angular/platform-browser';
 import { CdkDrag } from '@angular/cdk/drag-drop';
+// tslint:disable-next-line: max-line-length
+import { Component, EventEmitter, HostListener, Inject, Input, OnChanges, OnInit, Optional, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { CustomImageEvent } from './models/custom-image-event-model';
+import { ImageViewerConfig } from './models/image-viewer-config.model';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
@@ -51,9 +51,6 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
 
   @Input()
   index = 0;
-
-  @Input()
-  imageName: string;
 
   @Input()
   footerTexts = [

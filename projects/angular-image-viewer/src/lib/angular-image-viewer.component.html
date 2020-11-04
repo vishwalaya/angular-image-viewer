@@ -1,15 +1,12 @@
 <div [appScreenfull]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor"
     (wheel)="scrollZoom($event)">
-    <div class="image-name" *ngIf="imageName">
-      <span>{{imageName}}</span>
+    <div class="main-img-container">
+        <div cdkDrag class="drag-element">
+            <img [src]="src[index]" [ngStyle]="style" alt=""
+                (cdkDragStarted)="onDragStart($event)"
+                (load)="onLoad()" (loadstart)="onLoadStart()" (error)="imageNotFound()" />
+        </div>
     </div>
-
-    <div cdkDrag class="drag-element">
-        <img [src]="src[index]" [ngStyle]="style" alt=""
-            (cdkDragStarted)="onDragStart($event)"
-            (load)="onLoad()" (loadstart)="onLoadStart()" (error)="imageNotFound()" />
-    </div>
-
     <div class="spinner-container" *ngIf="loading">
         <div class="spinner"></div>
     </div>
