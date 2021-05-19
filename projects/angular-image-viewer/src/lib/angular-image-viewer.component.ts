@@ -1,8 +1,8 @@
-import { CdkDrag } from '@angular/cdk/drag-drop';
-// tslint:disable-next-line: max-line-length
-import { Component, EventEmitter, HostListener, Inject, Input, OnChanges, OnInit, Optional, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { CustomImageEvent } from './models/custom-image-event-model';
+import { Component, OnInit, HostListener, Optional, Inject, Input, Output,
+  EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { ImageViewerConfig } from './models/image-viewer-config.model';
+import { CustomImageEvent } from './models/custom-image-event-model';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
@@ -32,13 +32,14 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
 };
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'angular-image-viewer',
   templateUrl: './angular-image-viewer.component.html',
   styleUrls: ['./angular-image-viewer.component.scss']
 })
 export class AngularImageViewerComponent implements OnInit, OnChanges {
 
-  @ViewChild(CdkDrag, null) cdkDrag: CdkDrag;
+  @ViewChild(CdkDrag, {static: true}) cdkDrag: CdkDrag;
 
   @Input()
   src: string[];
@@ -51,6 +52,9 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
 
   @Input()
   index = 0;
+
+  @Input()
+  imageName: string;
 
   @Input()
   footerTexts = [
@@ -202,11 +206,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   private canNavigate(event: any) {
-    if (event.type === 'keyup') {
-      return (this.config.allowKeyboardNavigation && this.hovered);
-    } else if (event.type === 'click') {
-      return this.hovered;
-    }
+    return event == null || (this.config.allowKeyboardNavigation && this.hovered);
   }
 
   private updateStyle() {
