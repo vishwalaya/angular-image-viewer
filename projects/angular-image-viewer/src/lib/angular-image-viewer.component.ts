@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener, Optional, Inject, Input, Output,
-  EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
+  EventEmitter, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { ImageViewerConfig } from './models/image-viewer-config.model';
 import { CustomImageEvent } from './models/custom-image-event-model';
 import { CdkDrag } from '@angular/cdk/drag-drop';
@@ -206,7 +206,11 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   private canNavigate(event: any) {
-    return event == null || (this.config.allowKeyboardNavigation && this.hovered);
+    if (event.type === 'keyup') {
+      return (this.config.allowKeyboardNavigation && this.hovered);
+    } else if (event.type === 'click') {
+      return this.hovered;
+    }
   }
 
   private updateStyle() {
