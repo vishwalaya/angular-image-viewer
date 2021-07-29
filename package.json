@@ -1,6 +1,6 @@
 {
   "name": "@clarivate/angular-image-viewer",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -26,7 +26,6 @@
     "screenfull": "^5.0.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
-    
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.901.12",
