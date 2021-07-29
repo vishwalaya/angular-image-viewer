@@ -49,11 +49,11 @@
     </div>
 
     <div class="nav-button-container" *ngIf="src.length > 1">
-        <button type="button" [class]="config.btnClass" (click)="prevImage($event)"
+        <button type="button" #prevImg [class]="config.btnClass" (click)="prevImage($event); prevImg.blur()"
         [style.color]="config.primaryColor"  [disabled]="index === 0">
             <span [class]="config.btnIcons.prev"></span>
         </button>
-        <button type="button" [class]="config.btnClass" (click)="nextImage($event)"
+        <button type="button" #nextImg [class]="config.btnClass" (click)="nextImage($event); nextImg.blur()"
         [style.color]="config.primaryColor"  [disabled]="index === src.length - 1">
             <span [class]="config.btnIcons.next"></span>
         </button>
