@@ -41,7 +41,7 @@ jobs:
           at: ~/repo
       - run:
           name: Build the package
-          command: npm install && ng build angular-image-viewer --prod
+          command: node_modules/.bin/ng build angular-image-viewer --prod
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
