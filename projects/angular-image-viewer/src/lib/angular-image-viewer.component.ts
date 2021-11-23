@@ -39,7 +39,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
 })
 export class AngularImageViewerComponent implements OnInit, OnChanges {
 
-  @ViewChild(CdkDrag, {static: true}) cdkDrag: CdkDrag;
+  @ViewChild(CdkDrag, { static: true }) cdkDrag: CdkDrag;
 
   @Input()
   src: string[];
@@ -105,6 +105,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
       this.loading = true;
       this.index++;
       this.triggerIndexBinding();
+      this.fireCustomEvent('next', this.index);
       this.reset();
     }
   }
@@ -115,12 +116,14 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
       this.loading = true;
       this.index--;
       this.triggerIndexBinding();
+      this.fireCustomEvent('prev', this.index);
       this.reset();
     }
   }
 
   zoomIn() {
     this.scale *= (1 + this.config.zoomFactor);
+    this.fireCustomEvent('zoomIn', this.scale);
     this.updateStyle();
   }
 
@@ -128,6 +131,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
     if (this.scale > this.config.zoomFactor) {
       this.scale /= (1 + this.config.zoomFactor);
     }
+    this.fireCustomEvent('zoomOut', this.scale);
     this.updateStyle();
   }
 
@@ -140,6 +144,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
 
   rotateClockwise() {
     this.rotation += 90;
+    this.fireCustomEvent('rotateClockwise', this.rotation);
     this.updateStyle();
   }
 
