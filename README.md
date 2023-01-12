@@ -3,10 +3,10 @@
 
 demo: https://clarivate.github.io/angular-image-viewer/
 
-A configurable Angular image viewer component, compatible with Angular 9
+A configurable Angular image viewer component, compatible with Angular 13
 
 ## Features:
- * Compatible with Angular 9
+ * Compatible with Angular 13
  * Configurable
  * Rotate image
  * Zoom image

@@ -1,10 +1,10 @@
 
 # Angular X Image Viewer
 
-A configurable Angular image viewer component, compatible with Angular 7.x+ 
+A configurable Angular image viewer component, compatible with Angular 13
 
 ## Features:
- * Compatible with Angular 7.x+
+ * Compatible with Angular 13
  * Configurable
  * Rotate image
  * Zoom image

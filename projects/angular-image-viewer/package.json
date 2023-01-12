@@ -1,6 +1,6 @@
 {
   "name": "@clarivate/angular-image-viewer",
-  "version": "4.0.0",
+  "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/pravinsharma/angular-image-viewer.git"
@@ -8,8 +8,8 @@
   "author": "",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^14.2.0",
-    "@angular/core": "^14.2.0",
+    "@angular/common": "13.3.12",
+    "@angular/core": "13.3.12",
     "font-awesome": "^4.7.0"
   },
   "keywords": [
