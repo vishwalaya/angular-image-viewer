@@ -170,6 +170,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ngx-image-viewer"
+  }
 }
