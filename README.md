@@ -19,7 +19,7 @@ A configurable Angular image viewer component, compatible with Angular 13
 To use default configuration, simply import the ImageViewerModule into your module, like so:
 
 ```javascript
-import { AngularImageViewerModule } from "@clarivate/angular-image-viewer";
+import { AngularImageViewerModule } from "@prvinsharma/angular-image-viewer";
 
 @NgModule({
   //...

@@ -1,5 +1,5 @@
 {
-  "name": "@clarivate/angular-image-viewer",
+  "name": "@prvinsharma/angular-image-viewer",
   "version": "3.0.0",
   "scripts": {
     "ng": "ng",
@@ -55,14 +55,14 @@
   "main": "karma.conf.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clarivate/angular-image-viewer.git"
+    "url": "git+https://github.com/pravinsharma/angular-image-viewer.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/clarivate/angular-image-viewer/issues"
+    "url": "https://github.com/pravinsharma/angular-image-viewer/issues"
   },
-  "homepage": "https://github.com/clarivate/angular-image-viewer#readme",
+  "homepage": "https://github.com/pravinsharma/angular-image-viewer#readme",
   "directories": {
     "doc": "docs"
   }
