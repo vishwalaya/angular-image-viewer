@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AngularImageViewerModule } from '@clarivate/angular-image-viewer';
+import { AngularImageViewerModule } from '@prvinsharma/angular-image-viewer';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,6 @@ import { AngularImageViewerModule } from '@clarivate/angular-image-viewer';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-
     AngularImageViewerModule
 
   ],

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImageViewerConfig, CustomImageEvent } from '@clarivate/angular-image-viewer';
+import { ImageViewerConfig, CustomImageEvent } from '@prvinsharma/angular-image-viewer';
 
 
 @Component({
@@ -10,10 +10,10 @@ import { ImageViewerConfig, CustomImageEvent } from '@clarivate/angular-image-vi
 export class AppComponent {
   title = 'angular-image-viewer';
   images = [
-    'http://www.fillmurray.com/400/400',
-    'http://www.fillmurray.com/600/550',
-    'http://www.fillmurray.com/450/400',
-    'http://www.fillmurray.com/510/500',
+    'https://loremflickr.com/400/400',
+    'https://loremflickr.com/600/550',
+    'https://loremflickr.com/450/400',
+    'https://loremflickr.com/510/500',
 
   ];
   imageIndex = 0;

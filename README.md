@@ -1,7 +1,7 @@
 
 # Angular Image Viewer
 
-demo: https://clarivate.github.io/angular-image-viewer/
+demo: https://pravinsharma.github.io/angular-image-viewer/
 
 A configurable Angular image viewer component, compatible with Angular 14
 
