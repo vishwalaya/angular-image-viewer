@@ -17,7 +17,7 @@
     <div class="button-container">
         <button type="button" id="ngx-fs-btn" [class]="config.btnClass" (click)="toggleFullscreen()"
         [style.color]="config.primaryColor" *ngIf="config.allowFullscreen">
-            <span [class]="config.btnIcons.fullscreen"></span>
+            <span [class]="config.btnIcons?.fullscreen"></span>
         </button>
 
         <div class="button-container-bottom">
@@ -26,23 +26,23 @@
                 <span [class]="cBtn.icon"></span>
             </button>
 
-            <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.rotateCounterClockwise"
+            <button type="button" [class]="config.btnClass" *ngIf="config.btnShow?.rotateCounterClockwise"
             [style.color]="config.primaryColor" (click)="rotateCounterClockwise()">
-                <span [class]="config.btnIcons.rotateCounterClockwise"></span>
+                <span [class]="config.btnIcons?.rotateCounterClockwise"></span>
             </button>
-            <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.rotateClockwise"
+            <button type="button" [class]="config.btnClass" *ngIf="config.btnShow?.rotateClockwise"
             [style.color]="config.primaryColor" (click)="rotateClockwise()">
-                <span [class]="config.btnIcons.rotateClockwise"></span>
+                <span [class]="config.btnIcons?.rotateClockwise"></span>
             </button>
 
             <div class="button-zoom-in-out-container">
-                <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.zoomIn"
+                <button type="button" [class]="config.btnClass" *ngIf="config.btnShow?.zoomIn"
                 [style.color]="config.primaryColor" (click)="zoomIn()">
-                    <span [class]="config.btnIcons.zoomIn"></span>
+                    <span [class]="config.btnIcons?.zoomIn"></span>
                 </button>
-                <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.zoomOut"
+                <button type="button" [class]="config.btnClass" *ngIf="config.btnShow?.zoomOut"
                 [style.color]="config.primaryColor" (click)="zoomOut()">
-                    <span [class]="config.btnIcons.zoomOut"></span>
+                    <span [class]="config.btnIcons?.zoomOut"></span>
                 </button>
             </div>
         </div>
@@ -51,11 +51,11 @@
     <div class="nav-button-container" *ngIf="src.length > 1">
         <button type="button" #prevImg [class]="config.btnClass" (click)="prevImage($event); prevImg.blur()"
         [style.color]="config.primaryColor"  [disabled]="index === 0">
-            <span [class]="config.btnIcons.prev"></span>
+            <span [class]="config.btnIcons?.prev"></span>
         </button>
         <button type="button" #nextImg [class]="config.btnClass" (click)="nextImage($event); nextImg.blur()"
         [style.color]="config.primaryColor"  [disabled]="index === src.length - 1">
-            <span [class]="config.btnIcons.next"></span>
+            <span [class]="config.btnIcons?.next"></span>
         </button>
     </div>
     <div class="footer-section">
