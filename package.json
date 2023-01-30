@@ -61,6 +61,6 @@
   },
   "homepage": "https://github.com/pravinsharma/angular-image-viewer",
   "directories": {
-    "doc": "ngx-image-viewer"
+    "doc": "docs"
   }
 }
