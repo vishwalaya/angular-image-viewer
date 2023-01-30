@@ -4,9 +4,9 @@ import { Directive, Input, ElementRef, OnChanges, OnInit, SimpleChanges } from '
 @Directive({
   selector: '[appScreenfull]'
 })
-export class FullScreenDirective implements OnChanges, OnInit {
+export class FullScreenDirective implements OnChanges {
 
-  @Input('appScreenfull') fullscreenState: boolean;
+  @Input('appScreenfull') fullscreenState!: boolean;
 
   constructor(private el: ElementRef) { }
 
@@ -38,11 +38,5 @@ export class FullScreenDirective implements OnChanges, OnInit {
         }
       }
     }
-
   }
-
-  ngOnInit() {
-
-  }
-
 }

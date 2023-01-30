@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImageViewerConfig, CustomImageEvent } from '@prvinsharma/angular-image-viewer';
+import { CustomImageEvent, ImageViewerConfig } from 'angular-image-viewer';
 
 
 @Component({
@@ -10,14 +10,15 @@ import { ImageViewerConfig, CustomImageEvent } from '@prvinsharma/angular-image-
 export class AppComponent {
   title = 'angular-image-viewer';
   images = [
-    'https://loremflickr.com/400/400',
-    'https://loremflickr.com/600/550',
-    'https://loremflickr.com/450/400',
-    'https://loremflickr.com/510/500',
+    'http://placeholder.pics/svg/400x400',
+    'http://placeholder.pics/svg/600x550',
+    'http://placeholder.pics/svg/450x400',
+    'http://placeholder.pics/svg/510x500',
 
   ];
   imageIndex = 0;
-  imageName: string;
+  imageName!: string;
+
   footerTexts = [
     'Image',
     'of',

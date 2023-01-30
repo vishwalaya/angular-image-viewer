@@ -1,6 +1,6 @@
 {
   "name": "@prvinsharma/angular-image-viewer",
-  "version": "4.0.0",
+  "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/pravinsharma/angular-image-viewer.git"
@@ -8,20 +8,10 @@
   "author": "",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^14.2.12",
-    "@angular/core": "^14.2.12",
-    "font-awesome": "^4.7.0"
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0"
   },
-  "keywords": [
-    "ngx-image-viewer",
-    "angular-image-viewer",
-    "image-loader",
-    "image-fullscreen",
-    "loader",
-    "image",
-    "angular-image",
-    "ngx-image",
-    "Angular Image Viewer",
-    "Angular Image Loader"
-  ]
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
 }
