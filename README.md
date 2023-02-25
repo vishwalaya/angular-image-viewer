@@ -3,10 +3,10 @@
 
 demo: https://pravinsharma.github.io/angular-image-viewer/
 
-A configurable Angular image viewer component, compatible with Angular 14
+A configurable Angular image viewer component, compatible with Angular 15
 
 ## Features:
- * Compatible with Angular 14
+ * Compatible with Angular 15
  * Configurable
  * Rotate image
  * Zoom image

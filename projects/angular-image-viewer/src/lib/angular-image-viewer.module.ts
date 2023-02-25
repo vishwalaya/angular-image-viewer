@@ -5,7 +5,6 @@ import { AngularImageViewerComponent } from './angular-image-viewer.component';
 import { FullScreenDirective } from './directives/full-screen.directive';
 
 
-
 @NgModule({
   declarations: [
     AngularImageViewerComponent, FullScreenDirective

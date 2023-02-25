@@ -134,6 +134,15 @@
             "tsConfig": "projects/angular-image-viewer/tsconfig.spec.json",
             "karmaConfig": "projects/angular-image-viewer/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/angular-image-viewer/src/**/*.ts",
+              "projects/angular-image-viewer/src/**/*.html"
+            ]
+          }
         }
       }
     }
