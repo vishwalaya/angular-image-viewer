@@ -163,9 +163,11 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
     this.loading = true;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   imageNotFound() {
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onDragStart(evt: any) {
     if (evt.source._dragRef._initialTransform && evt.source._dragRef._initialTransform.length > 0) {
       const myTranslate = evt.source._dragRef._initialTransform.split(' rotate')[0];
@@ -212,6 +214,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
     this.hovered = false;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private canNavigate(event: any) {
     if (event.type === 'keyup') {
       return (this.config.allowKeyboardNavigation && this.hovered);

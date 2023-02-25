@@ -1,5 +1,4 @@
-import { Directive, Input, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-// import * as screenfull from 'screenfull';
+import { Directive, Input, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[appScreenfull]'
@@ -15,6 +14,7 @@ export class FullScreenDirective implements OnChanges {
     if (!changes['fullscreenState'].isFirstChange()) {
 
       if (this.fullscreenState) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const element: any = this.el.nativeElement;
 
         // tslint:disable-next-line: max-line-length
@@ -23,9 +23,10 @@ export class FullScreenDirective implements OnChanges {
         if (requestMethod) { // Native full screen.
           requestMethod.call(element);
         } else {
-          console.log('FullScreen Request Method Not Supported on this browser.');
+          console.error('FullScreen Request Method Not Supported on this browser.');
         }
       } else {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const element: any = document;
 
         // tslint:disable-next-line: max-line-length
