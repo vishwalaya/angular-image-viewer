@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CustomImageEvent, ImageViewerConfig } from 'angular-image-viewer';
+import { CustomImageEvent, ImageViewerConfig } from '../../projects/angular-image-viewer';
 
 
 @Component({
